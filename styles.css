@@ -108,6 +108,12 @@ img, picture, svg, video {
   }
 }
 
+@media (max-width: 768px) {
+    .stars, .stars2, .stars3 {
+        display: none;
+    }
+}
+
 /* Navigation header */
 .navigation {
     position: fixed;
