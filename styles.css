@@ -2,7 +2,7 @@
     --color-backdrop: hsla(45, 17%, 95%, 0.8);
     --color-menu-backdrop: hsla(46, 42%, 94%, 0.95);
     --text-primary: hsla(172, 95%, 18%, 1);
-    --text-secondary: hsla(172, 70%, 25%, 0.8);
+    --text-secondary: hsla(172, 70%, 25%, 0.7);
     --accent-color: rgb(251, 145, 23);
     --accent-light: hsla(32, 100%, 65%, 1);
     --border-color: rgba(209, 213, 219, 0.3);
@@ -443,7 +443,7 @@ img, picture, svg, video {
 
 /* Section containers */
 .section-container {
-    padding: 5rem 2rem;
+    padding: 2rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -473,6 +473,50 @@ img, picture, svg, video {
     0 8px 20px rgba(0, 0, 0, 0.1); 
 }
 
+/* Catogory switch */
+.category-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+    transition: background-color 400ms cubic-bezier(1, 0, 0.4, 1);
+}
+
+.category-switch .nav-switch {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0.5rem;
+    background: hsla(45, 17%, 95%, 0.5);;
+    backdrop-filter: blur(10px) saturate(1.7);
+    -webkit-backdrop-filter: blur(10px) saturate(1.7);
+    border-radius: 50px;
+    border: 0.2px solid var(--border-color);
+    box-shadow: var(--shadow-inset-soft);
+}
+
+.category-switch button {
+    font-size: 1.2rem;
+    margin: 0.5rem;
+    display: inline-block;
+    position: relative;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: transparent;
+    color: var(--text-primary);
+    border: none;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.category-switch button:hover,
+.category-switch button.active {
+	background-color: var(--accent-color);
+	color: white;
+}
+
 /* Cards */
 .cards-content {
     display: grid;
@@ -489,6 +533,10 @@ img, picture, svg, video {
 }
 
 .card-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
     text-align: left;
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -537,11 +585,12 @@ img, picture, svg, video {
     font-weight: 500;
 }
 
+.card-btn-container {
+    display: flex;
+}
+
 .card-btn {
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    margin-top: 1rem;
+    margin: 0.5rem;
     padding: 0.5rem 1rem;
     background-color: var(--accent-color);
     border-radius: 50px;
@@ -583,7 +632,6 @@ img, picture, svg, video {
     transform: skewX(-25deg) translateX(200%);
 }
 
-
 .card-btn:hover {
     transform: scale(0.995);
     box-shadow: 
@@ -591,6 +639,17 @@ img, picture, svg, video {
         inset 0 -0.1em 0.1em rgba(255,255,255,0.5),
         0 0.25em 0.2em -0.2em rgba(0,0,0,0.2),
         0 0 0.1em 0.2em inset rgba(255,255,255,0.2);
+}
+
+.credit-text {
+    font-size: 0.9rem !important;
+    color: gray !important;
+    margin-right: 1rem;
+	text-align: right;
+}
+
+.credit-text a {
+    color: gray !important;
 }
 
 /* Media query for Cards */
@@ -805,7 +864,6 @@ img, picture, svg, video {
 }
 
 /* Experience */
-
 .skills-transfer-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
